@@ -1,7 +1,11 @@
 package observerpattern
 
-fun main(){
-    val observableObject=ObservableObject(PrintingTextChangedListener())
-    observableObject.text="Hello"
-    observableObject.text="There"
+fun main() {
+    val observableText = ObservableText(object : ValueChangeListener{
+        override fun onValueChanged(newValue: String) {
+            println("value is changed to: $newValue")
+        }
+    })
+    observableText.text = "Hello"
+    observableText.text = "There"
 }

@@ -5,6 +5,11 @@ class ControllerStudent(model: ModelStudent, view: ViewStudent) {
     private val model: ModelStudent
     private val view: ViewStudent
 
+    init {
+        this.model = model
+        this.view = view
+    }
+
     var studentName: String?
         get() = model.name
         set(name) {
@@ -18,10 +23,5 @@ class ControllerStudent(model: ModelStudent, view: ViewStudent) {
 
     fun updateView() {
         view.printStudentDetails(model.name!!, model.rollNo!!)
-    }
-
-    init {
-        this.model = model
-        this.view = view
     }
 }

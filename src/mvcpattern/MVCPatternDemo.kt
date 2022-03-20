@@ -5,7 +5,7 @@ object MVCPatternDemo {
     fun main(args: Array<String>) {
 
         //fetch student record based on his roll no from the database
-        val model: ModelStudent = retriveStudentFromDatabase()
+        val model: ModelStudent = retrieveStudentFromDatabase()
 
         //Create a view : to write student details on console
         val view = ViewStudent()
@@ -18,7 +18,7 @@ object MVCPatternDemo {
         controller.updateView()
     }
 
-    private fun retriveStudentFromDatabase(): ModelStudent {
+    private fun retrieveStudentFromDatabase(): ModelStudent {
         val student = ModelStudent()
         student.name = "Robert"
         student.rollNo = "10"
